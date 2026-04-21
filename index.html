@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUFFET DYAFA | Luxe & Tradition Marocaine</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#home" class="logo">
+                <img src="logo_blanco.png" alt="Buffet Dyafa Logo" id="navbar-logo">
+            </a>
+
+            <!-- Mobile Hamburger Menu Icon -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#boutique">Boutique</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#temoignages">Avis</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" style="font-size:3.5rem; line-height:1.2;">Organisation et décoration de tous vos
+                événements</h1>
+            <p class="hero-text" style="color:var(--white); font-size:1.1rem; max-width:800px; margin:0 auto 2rem;">Nous
+                vous accompagnons dans l’organisation de vos événements, du plus simple au plus prestigieux. Mariages,
+                fêtes religieuses, célébrations familiales… nous nous occupons de tout : décoration, buffet, fleurs et
+                ambiance.</p>
+            <div class="hero-actions" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+                <a href="#contact" class="btn-gold-solid"><i class="fas fa-phone-alt" style="margin-right:8px;"></i>
+                    Nous contacter</a>
+                <a href="#contact" class="btn-outline-gold"><i class="fas fa-envelope" style="margin-right:8px;"></i>
+                    Demander un devis</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services (Dark) -->
+    <section id="services" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Services Exclusifs</h2>
+                <div class="divider"></div>
+                <div class="carousel-container" style="position: relative;">
+                    <button class="carousel-btn prev-btn" id="prev-service"><i class="fas fa-chevron-left"></i></button>
+                    <div class="grid-3" id="services-carousel">
+                        <!-- Card 1: Mariages -->
+                        <div class="luxury-card">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800"
+                                alt="Mariages Royaux">
+                            <div class="card-content">
+                                <h3><i class="fa-solid fa-ring icon-gold"></i> Mariages</h3>
+                                <ul class="service-list list-2-col">
+                                    <li>Khetba</li>
+                                    <li>Drib Sdaq</li>
+                                    <li>Hammam</li>
+                                    <li>Henna</li>
+                                    <li>Soirée</li>
+                                    <li>Ftour</li>
+                                    <li>Sab3 Ayam</li>
+                                </ul>
+                                <p class="service-highlight"><strong>Services inclus :</strong> Décoration, buffet,
+                                    tables, chaises, fleurs, éclairage et ambiance.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Naissance -->
+                        <div class="luxury-card">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800"
+                                alt="Naissance et Enfance">
+                            <div class="card-content">
+                                <h3><i class="fa-solid fa-baby icon-gold"></i> Naissance & Enfance</h3>
+                                <ul class="service-list">
+                                    <li>Saba3 (Aqiqah)</li>
+                                    <li>Circoncision (Tehara)</li>
+                                    <li>Haflat Al Hifz</li>
+                                    <li>Premier jeûne</li>
+                                </ul>
+                                <p class="service-highlight"><strong>Organisation complète</strong> avec décoration et
+                                    buffet adapté.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Fêtes Religieuses -->
+                        <div class="luxury-card">
+                            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800"
+                                alt="Fêtes Religieuses">
+                            <div class="card-content">
+                                <h3><i class="fa-solid fa-moon icon-gold"></i> Fêtes Religieuses</h3>
+                                <ul class="service-list">
+                                    <li>Aïd Al-Fitr</li>
+                                    <li>Aïd Al-Adha</li>
+                                    <li>Achoura</li>
+                                    <li>Mawlid</li>
+                                </ul>
+                                <p class="service-highlight">Buffets traditionnels, pâtisseries marocaines et plats
+                                    typiques.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Événements Spirituels -->
+                        <div class="luxury-card">
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=500"
+                                alt="Événements Spirituels">
+                            <div class="card-content">
+                                <h3><i class="fa-solid fa-mosque icon-gold"></i> Événements Spirituels</h3>
+                                <ul class="service-list">
+                                    <li>Retour du Hajj ou Omra</li>
+                                    <li>Khatm Al-Quran</li>
+                                    <li>Sadaka</li>
+                                    <li>Soirées spirituelles (Gnaoua / Issawa)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Otros -->
+                        <div class="luxury-card">
+                            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800"
+                                alt="Autres Événements">
+                            <div class="card-content">
+                                <h3><i class="fa-solid fa-home icon-gold"></i> Otros</h3>
+                                <ul class="service-list">
+                                    <li>R’hil (emménagement)</li>
+                                    <li>Aza (condoléances)</li>
+                                    <li>Najah (réussite, diplômes)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next-btn" id="next-service"><i
+                            class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Boutique -->
+    <section id="boutique" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--black)"><i class="fa-solid fa-shopping-bag icon-gold"></i> Boutique</h2>
+                <div class="divider-dark"></div>
+                <p style="text-align: center; color: #555; font-size: 1.1rem; margin-top:15px;">Découvrez nos produits :
+                </p>
+            </div>
+            <div class="boutique-categories">
+                <!-- Fleurs -->
+                <div class="boutique-item">
+                    <div class="circle-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=500" alt="Fleurs">
+                    </div>
+                    <h3>Fleurs</h3>
+                    <p>Bouquets personnalisés</p>
+                </div>
+                <!-- Cadeaux -->
+                <div class="boutique-item">
+                    <div class="circle-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500" alt="Cadeaux">
+                    </div>
+                    <h3>Cadeaux</h3>
+                    <p>Pour toutes occasions</p>
+                </div>
+                <!-- Décoration -->
+                <div class="boutique-item">
+                    <div class="circle-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=500" alt="Décoration">
+                    </div>
+                    <h3>Décoration</h3>
+                    <p>Accessoires exclusifs</p>
+                </div>
+                <!-- Pâtisseries -->
+                <div class="boutique-item">
+                    <div class="circle-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1ea383?w=500" alt="Pâtisseries">
+                    </div>
+                    <h3>Pâtisseries</h3>
+                    <p>Douceurs marocaines</p>
+                </div>
+            </div>
+
+            <p class="service-highlight"
+                style="color: #000 !important; border-left: 3px solid var(--black); background: rgba(0,0,0,0.05); text-align:center; max-width:600px; margin: 0 auto;">
+                <i class="fa-solid fa-arrow-right icon-gold"></i> Commande sur demande avec livraison possible.
+            </p>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-image icon-gold"></i> Galerie</h2>
+                <div class="divider"></div>
+                <p style="text-align: center; color: #ccc; font-size: 1.1rem; margin-top:15px;">Découvrez nos
+                    réalisations :</p>
+            </div>
+            <div class="grid-4"
+                style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div class="luxury-card">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=500" alt="Mariages"
+                        style="height:200px;">
+                    <div class="card-content" style="padding:15px;">
+                        <h3 style="font-size:1.2rem; margin-bottom:0;">Mariages</h3>
+                    </div>
+                </div>
+                <div class="luxury-card">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500" alt="Fêtes"
+                        style="height:200px;">
+                    <div class="card-content" style="padding:15px;">
+                        <h3 style="font-size:1.2rem; margin-bottom:0;">Fêtes</h3>
+                    </div>
+                </div>
+                <div class="luxury-card">
+                    <img src="https://images.unsplash.com/photo-1590076241349-14a05f1df6dc?w=500" alt="Décorations"
+                        style="height:200px;">
+                    <div class="card-content" style="padding:15px;">
+                        <h3 style="font-size:1.2rem; margin-bottom:0;">Décorations</h3>
+                    </div>
+                </div>
+                <div class="luxury-card">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500" alt="Buffets"
+                        style="height:200px;">
+                    <div class="card-content" style="padding:15px;">
+                        <h3 style="font-size:1.2rem; margin-bottom:0;">Buffets</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section id="temoignages" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--black)"><i class="fa-solid fa-star icon-gold"></i> Témoignages</h2>
+                <div class="divider-dark"></div>
+                <p style="text-align: center; color: #555; font-size: 1.1rem; margin-top:15px;">Nos clients parlent de
+                    nous :</p>
+            </div>
+            <div class="grid-2">
+                <div class="pack-box" style="background:var(--black-soft); border-color:var(--gold);">
+                    <p style="font-size:1.3rem; font-style:italic; color:var(--gold);">“Service professionnel et
+                        décoration magnifique !”</p>
+                    <div class="divider" style="margin:20px auto 0; width:50px;"></div>
+                </div>
+                <div class="pack-box" style="background:var(--black-soft); border-color:var(--gold);">
+                    <p style="font-size:1.3rem; font-style:italic; color:var(--gold);">“Organisation parfaite du début à
+                        la fin.”</p>
+                    <div class="divider" style="margin:20px auto 0; width:50px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="section-dark">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info"
+                    style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h2><i class="fa-solid fa-phone icon-gold"></i> Contactez-Nous</h2>
+                        <p>Démarrez l'organisation de votre événement avec nous dès aujourd'hui.</p>
+                        <ul class="contact-details" style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 15px;"><a href="mailto:buffetdiyafa@gmail.com"
+                                    style="color:var(--white); text-decoration:none; transition: color 0.3s;"
+                                    onmouseover="this.style.color='var(--gold)'"
+                                    onmouseout="this.style.color='var(--white)'"><i
+                                        class="fas fa-envelope icon-gold"></i> buffetdiyafa@gmail.com</a></li>
+                            <li style="margin-bottom: 15px;">
+                                <i class="fas fa-phone-alt icon-gold" style="margin-right: 5px;"></i>
+                                <a href="https://wa.me/212762488444" target="_blank"
+                                    style="color:var(--white); text-decoration:none; transition: color 0.3s;"
+                                    onmouseover="this.style.color='var(--gold)'"
+                                    onmouseout="this.style.color='var(--white)'">+212 762 488 444</a>
+                                <span style="color: var(--gold); margin: 0 5px;">/</span>
+                                <a href="https://wa.me/212779462163" target="_blank"
+                                    style="color:var(--white); text-decoration:none; transition: color 0.3s;"
+                                    onmouseover="this.style.color='var(--gold)'"
+                                    onmouseout="this.style.color='var(--white)'">+212 779 462 163</a>
+                            </li>
+                            <li style="margin-bottom: 15px;"><a href="https://www.instagram.com/buffet_diyafa/"
+                                    target="_blank"
+                                    style="color:var(--white); text-decoration:none; transition: color 0.3s;"
+                                    onmouseover="this.style.color='var(--gold)'"
+                                    onmouseout="this.style.color='var(--white)'"><i
+                                        class="fab fa-instagram icon-gold"></i> @buffet_diyafa</a></li>
+                            <li style="margin-bottom: 15px;"><a href="https://www.tiktok.com/@buffet_diyafa"
+                                    target="_blank"
+                                    style="color:var(--white); text-decoration:none; transition: color 0.3s;"
+                                    onmouseover="this.style.color='var(--gold)'"
+                                    onmouseout="this.style.color='var(--white)'"><i class="fab fa-tiktok icon-gold"></i>
+                                    @buffet_diyafa</a></li>
+                            <li style="margin-bottom: 15px;"><a
+                                    href="https://www.facebook.com/profile.php?id=61584726971236" target="_blank"
+                                    style="color:var(--white); text-decoration:none; transition: color 0.3s;"
+                                    onmouseover="this.style.color='var(--gold)'"
+                                    onmouseout="this.style.color='var(--white)'"><i
+                                        class="fab fa-facebook icon-gold"></i> @Buffet Diyafa</a></li>
+                            <li><i class="fas fa-map-marker-alt icon-gold"></i> Adresse : Tánger, Maroc</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mapa de Ubicación -->
+                    <div class="map-container"
+                        style="margin-top: 30px; border: 1px solid var(--gold); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.5);">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1396.022827739621!2d-5.787000521771043!3d35.76222573104758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b81001685c4ad%3A0x469ccd14a1d5c188!2z2KjZiNmB2Yog2KfZhNi22YrYp9mB2Kk!5e1!3m2!1ses!2ses!4v1776607064965!5m2!1ses!2ses"
+                            width="100%" height="250" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <form class="luxury-form" id="contactForm"
+                    style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                    <div>
+                        <input type="text" placeholder="Votre Nom" required>
+                        <input type="email" placeholder="Votre Email" required>
+                        <textarea placeholder="Votre Demande" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-gold-solid">Envoyer le Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <img src="logo_blanco.png" alt="Logo" class="footer-logo">
+            <p>&copy; 2026 BUFFET DYAFA. L'Élégance à la Marocaine.</p>
+        </div>
+    </footer>
+
+    <!-- Social Floats -->
+    <a href="https://wa.me/212762488444" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/buffet_diyafa/" target="_blank" class="instagram-btn"><i
+            class="fab fa-instagram"></i></a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

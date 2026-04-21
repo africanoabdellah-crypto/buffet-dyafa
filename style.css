@@ -1,0 +1,948 @@
+/* RESET & VARIABLES */
+:root {
+    --gold: #D4AF37;
+    --gold-light: #F5E0A3;
+    --gold-dark: #A67C00;
+    --black: #050505;
+    --black-soft: #111111;
+    --white: #FFFFFF;
+    --white-soft: #F9F9F9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+.hero-title,
+.logo {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* Fondo estilo seda negra */
+    background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 5px 0;
+    z-index: 999;
+    border-bottom: 1.2px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+/* Adornos florales en las esquinas - AHORA LAS 4 */
+.navbar::before,
+.navbar::after,
+.nav-content::before,
+.nav-content::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    /* Reducido para caber en barra más pequeña */
+    height: 100px;
+    background-image: url('gold_floral_ornament_corner_1776612592397.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 1;
+    filter: sepia(100%) saturate(500%) brightness(1.1) hue-rotate(-10deg);
+    /* Efecto Oro Intenso */
+    animation: floralGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes floralGlow {
+    from {
+        opacity: 0.4;
+        filter: brightness(1);
+    }
+
+    to {
+        opacity: 0.7;
+        filter: brightness(1.3);
+    }
+}
+
+.navbar::before {
+    top: -15px;
+    left: -15px;
+    transform: rotate(0deg);
+}
+
+.navbar::after {
+    top: -15px;
+    right: -15px;
+    transform: rotate(90deg);
+}
+
+.nav-content::before {
+    bottom: -15px;
+    left: -15px;
+    transform: rotate(-90deg);
+}
+
+.nav-content::after {
+    bottom: -15px;
+    right: -15px;
+    transform: rotate(180deg);
+}
+
+.navbar.scrolled {
+    background: rgba(5, 5, 5, 0.98);
+    padding: 5px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    /* Más compacto */
+    padding: 0 80px;
+    position: relative;
+    border-top: 1.2px solid rgba(212, 175, 55, 0.5);
+    border-bottom: 1.2px solid rgba(212, 175, 55, 0.5);
+    margin: 5px auto;
+}
+
+.logo {
+    z-index: 10;
+    position: relative;
+}
+
+/* Flores detrás del logo */
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background-image: url('gold_floral_ornament_corner_1776612592397.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    filter: blur(1px);
+    z-index: -1;
+}
+
+.logo img {
+    height: 90px;
+    /* Reducido proporcionalmente */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--gold);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 0%;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transition: all 0.4s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--gold);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 75%);
+    transform: translateY(-3px);
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.nav-links li a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+    width: 60%;
+}
+
+.nav-links li a.active {
+    color: var(--gold);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+}
+
+.nav-links li a.active::after {
+    transform: translateX(-50%) scaleX(1);
+    width: 60%;
+}
+
+.btn-gold-solid:hover {
+    background-color: var(--white);
+    color: #000;
+    border-color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+}
+
+.btn-outline-gold {
+    display: inline-block;
+    padding: 16px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: 2px solid var(--gold);
+    background-color: transparent;
+    color: var(--gold);
+}
+
+.btn-outline-gold:hover {
+    background: var(--gold);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    padding-top: 155px;
+    /* Ajustado al nuevo tamaño compacto */
+    padding-bottom: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.7) 0%, rgba(5, 5, 5, 0.95) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.icon-gold {
+    color: var(--gold);
+    margin-right: 12px;
+}
+
+.gold-subtitle {
+    color: var(--white);
+    font-size: 1.3rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 5.5rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+}
+
+.hero-text {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+/* SECTIONS */
+.section-dark {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 120px 0;
+}
+
+.section-light {
+    background-color: var(--white-soft);
+    color: var(--black);
+    padding: 120px 0;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    color: inherit;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.divider {
+    width: 80px;
+    height: 3px;
+    background-color: var(--gold);
+    margin: 25px auto 0;
+}
+
+.divider-dark {
+    width: 80px;
+    height: 3px;
+    background-color: var(--black);
+    margin: 25px auto 0;
+}
+
+/* CARRUSEL DE SERVICIOS ADAPTABLE */
+.grid-3 {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+    /* Permite deslizar si no caben */
+    padding: 10px 5px 25px 5px;
+    scroll-snap-type: x mandatory;
+    /* Efecto de imán al deslizar */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar barra de scroll en navegadores modernos */
+.grid-3::-webkit-scrollbar {
+    height: 6px;
+}
+
+.grid-3::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+/* Tarjetas Proporcionales */
+.luxury-card {
+    flex: 0 0 300px;
+    /* Ancho fijo para que nunca se aplasten */
+    scroll-snap-align: start;
+    background-color: var(--black-soft);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+    .luxury-card {
+        flex: 1;
+        max-width: 250px;
+        /* Compact width to fit all comfortably */
+    }
+}
+
+/* BOTONES DE NAVEGACIÓN CARRUSEL */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(5, 5, 5, 0.8);
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: none !important;
+    /* Totalmente oculto en pantallas grandes */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+@media (max-width: 1199px) {
+    .carousel-btn {
+        display: flex !important;
+        /* Solo mostrar cuando el carrusel es necesario */
+    }
+}
+
+.carousel-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+@media (max-width: 900px) {
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        background: rgba(5, 5, 5, 0.9);
+    }
+
+    .prev-btn {
+        left: 0;
+    }
+
+    .next-btn {
+        right: 0;
+    }
+}
+
+.luxury-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.luxury-card img {
+    width: 100%;
+    height: 100px;
+    /* Mas compacto */
+    object-fit: cover;
+    border-bottom: 2px solid var(--gold);
+}
+
+.card-content {
+    padding: 15px 12px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.service-intro {
+    font-size: 0.95rem;
+    color: var(--white);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.service-list {
+    list-style: none;
+    text-align: left;
+    margin: 15px 0;
+}
+
+.service-list li {
+    font-size: 0.85rem;
+    color: #ddd;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.service-list.list-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.service-highlight {
+    font-size: 0.75rem;
+    color: #fff !important;
+    background: rgba(212, 175, 55, 0.05);
+    padding: 8px;
+    border-radius: 6px;
+    margin-top: auto;
+    /* Push to bottom of card */
+    border-left: 2px solid var(--gold);
+}
+
+/* BOUTIQUE CIRCLES */
+.boutique-categories {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.boutique-item {
+    text-align: center;
+    width: 200px;
+}
+
+.circle-img-wrapper {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 4px solid var(--gold);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.circle-img-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.circle-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boutique-item h3 {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.boutique-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Diseño Móvil en Cuadrícula para Boutique */
+@media (max-width: 600px) {
+    .boutique-categories {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .boutique-item {
+        width: 100%;
+    }
+
+    .circle-img-wrapper {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 10px;
+    }
+
+    .boutique-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .boutique-item p {
+        font-size: 0.8rem;
+    }
+}
+
+/* PACKS */
+.pack-box {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 60px 50px;
+    text-align: center;
+    transition: transform 0.4s;
+}
+
+.pack-box:hover {
+    transform: translateY(-5px);
+}
+
+.premium-box {
+    background-color: var(--black-soft);
+    /* Black for highest contrast */
+    color: var(--white);
+    border: 2px solid var(--gold);
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+}
+
+.premium-box .pack-list li {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.gold-text {
+    color: var(--gold) !important;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.pack-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.pack-list li {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 12px;
+}
+
+/* BUTTONS */
+.btn-gold,
+.btn-outline-dark,
+.btn-gold-solid {
+    display: inline-block;
+    padding: 16px 45px;
+    border-radius: 50px;
+    /* TOTALMENTE REDONDEADO */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: 2px solid var(--gold);
+}
+
+.btn-gold {
+    background: transparent;
+    color: var(--gold);
+}
+
+.btn-gold:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.btn-gold-solid {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.btn-gold-solid:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+.btn-outline-dark {
+    border: 2px solid var(--black);
+    color: var(--black);
+}
+
+.btn-outline-dark:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.premium-box .btn-gold-solid {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.premium-box .btn-gold-solid:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+/* CONTACT */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: space-between;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h2 {
+    font-size: 2.8rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.contact-details li {
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+    color: #dfdfdf;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-details i {
+    color: var(--gold);
+    font-size: 1.6rem;
+}
+
+.luxury-form {
+    flex: 1;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: var(--black-soft);
+    padding: 40px;
+    border-radius: 40px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.luxury-form input,
+.luxury-form textarea {
+    width: 100%;
+    padding: 18px 25px;
+    background: var(--black);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.luxury-form input:focus,
+.luxury-form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.luxury-form button {
+    border: none;
+    border-radius: 50px;
+    padding: 20px 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    width: 100%;
+    background: var(--gold);
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.luxury-form button:hover {
+    background: var(--white);
+    color: var(--black);
+}
+
+/* FOOTER */
+.footer {
+    background-color: #030303;
+    text-align: center;
+    padding: 70px 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.footer-logo {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+}
+
+.footer p {
+    color: #777;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+}
+
+/* SOCIAL FLOATS */
+.whatsapp-btn,
+.instagram-btn {
+    position: fixed;
+    right: 25px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+.whatsapp-btn {
+    bottom: 85px;
+    /* Arriba */
+    background-color: #25D366;
+}
+
+.instagram-btn {
+    bottom: 25px;
+    /* Abajo */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.whatsapp-btn:hover,
+.instagram-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* ANIMATED STICKERS */
+@keyframes floatSticker {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-4px) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-4px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.contact-details i.icon-gold {
+    display: inline-block;
+    animation: floatSticker 2s ease-in-out infinite;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .nav-content {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 75px;
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        transform: none;
+        width: 100%;
+        background: rgba(5, 5, 5, 0.98);
+        flex-direction: column;
+        display: none;
+        padding: 20px 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 14px 30px;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .logo img {
+        height: 65px;
+    }
+
+    .hero {
+        padding-top: 90px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .luxury-form {
+        min-width: 100%;
+    }
+}
