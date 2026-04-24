@@ -889,6 +889,88 @@ h4,
 }
 
 /* ============================
+   HORAIRES D'OUVERTURE
+   ============================ */
+.horaire-box {
+    margin-top: 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.horaire-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: rgba(212,175,55,0.07);
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.5px;
+}
+
+/* Pulsing green dot */
+.horaire-open-dot {
+    width: 9px;
+    height: 9px;
+    background: #2ecc71;
+    border-radius: 50%;
+    margin-left: auto;
+    box-shadow: 0 0 0 0 rgba(46,204,113,0.4);
+    animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes pulse-dot {
+    0%   { box-shadow: 0 0 0 0 rgba(46,204,113,0.5); }
+    70%  { box-shadow: 0 0 0 7px rgba(46,204,113,0); }
+    100% { box-shadow: 0 0 0 0 rgba(46,204,113,0); }
+}
+
+.horaire-open-text {
+    font-size: 0.78rem;
+    color: #2ecc71;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.horaire-grid {
+    padding: 6px 0;
+}
+
+.horaire-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.2s;
+}
+
+.horaire-row:last-child {
+    border-bottom: none;
+}
+
+.horaire-row:hover {
+    background: rgba(212,175,55,0.06);
+}
+
+.horaire-day {
+    font-size: 0.88rem;
+    color: #bbb;
+}
+
+.horaire-time {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+}
+
+/* ============================
    ACCORDION GALLERY — GALERIE
    ============================ */
 .accordion-gallery {
@@ -977,8 +1059,14 @@ h4,
         height: 300px;
         gap: 4px;
     }
-    .accordion-label h3 { font-size: 1rem; }
-    .accordion-label p { display: none; }
+
+    .accordion-label h3 {
+        font-size: 1rem;
+    }
+
+    .accordion-label p {
+        display: none;
+    }
 }
 
 /* COVERFLOW GALERIE */
@@ -1018,7 +1106,7 @@ h4,
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease, filter 0.6s ease;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
     cursor: grab;
     opacity: 0;
     pointer-events: none;
@@ -1062,8 +1150,10 @@ h4,
     transform: translateX(0) scale(1) translateZ(0);
     pointer-events: auto;
 }
+
 .coverflow-item.active::after {
-    background: rgba(0, 0, 0, 0); /* Remueve el overlay oscuro del activo */
+    background: rgba(0, 0, 0, 0);
+    /* Remueve el overlay oscuro del activo */
 }
 
 /* El elemento a la IZQUIERDA */
@@ -1087,6 +1177,7 @@ h4,
     transform: translateX(-100%) scale(0.5) translateZ(-400px);
     pointer-events: none;
 }
+
 .coverflow-item.hidden-right {
     opacity: 0;
     transform: translateX(100%) scale(0.5) translateZ(-400px);
@@ -1100,7 +1191,7 @@ h4,
     left: 0;
     width: 100%;
     padding: 30px;
-    background: linear-gradient(to top, rgba(0,0,0,0.98) 20%, transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.98) 20%, transparent);
     transition: all 0.5s ease;
     text-align: left;
     opacity: 0;
@@ -1139,6 +1230,7 @@ h4,
     padding-bottom: 3px;
     transition: color 0.3s;
 }
+
 .coverflow-content .explore-btn:hover {
     color: var(--gold);
 }
@@ -1162,24 +1254,41 @@ h4,
     transition: background 0.3s, transform 0.3s;
     border-radius: 50%;
 }
+
 .coverflow-dot:hover {
     transform: scale(1.2);
 }
+
 .coverflow-dot.active {
     background: var(--gold);
 }
 
 /* Ajustes Responsive para Coverflow */
 @media (max-width: 768px) {
-    .coverflow-container { height: 350px; }
+    .coverflow-container {
+        height: 350px;
+    }
+
     .coverflow-item {
         width: 320px;
         height: 250px;
     }
-    .coverflow-item.prev { transform: translateX(-40%) scale(0.8) translateZ(-150px); }
-    .coverflow-item.next { transform: translateX(40%) scale(0.8) translateZ(-150px); }
-    .coverflow-content h3 { font-size: 1.5rem; }
-    .coverflow-content p { font-size: 0.85rem; }
+
+    .coverflow-item.prev {
+        transform: translateX(-40%) scale(0.8) translateZ(-150px);
+    }
+
+    .coverflow-item.next {
+        transform: translateX(40%) scale(0.8) translateZ(-150px);
+    }
+
+    .coverflow-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .coverflow-content p {
+        font-size: 0.85rem;
+    }
 }
 
 .contact-details i.icon-gold {
