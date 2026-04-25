@@ -889,6 +889,177 @@ h4,
 }
 
 /* ============================
+/* ============================
+   CONTACT PREMIUM LAYOUT
+   ============================ */
+.contact-premium-section {
+    padding: 80px 0;
+    background: var(--black);
+}
+
+.contact-premium-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+/* --- Left Side --- */
+.contact-premium-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-premium-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+}
+
+.contact-premium-header .subtitle {
+    font-size: 0.95rem;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.contact-premium-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-premium-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-premium-list li i {
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.contact-premium-list li a,
+.contact-premium-list li span {
+    font-size: 0.95rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.contact-premium-list li a:hover {
+    color: var(--gold);
+}
+
+/* Horaires are mostly styled below, but we ensure it fits */
+.horaire-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: 1px solid rgba(212,175,55,0.3);
+}
+.horaire-header { background: rgba(0,0,0,0.5); }
+.horaire-row:hover { background: transparent; }
+
+/* Small map */
+.contact-premium-map {
+    height: 180px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,0.3);
+}
+
+/* --- Right Side (Form) --- */
+.contact-premium-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.luxury-form-boxed-container {
+    background: rgba(10, 10, 10, 0.4);
+    border: 1px solid rgba(212,175,55,0.15);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.luxury-form-boxed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.luxury-form-boxed input,
+.luxury-form-boxed textarea {
+    width: 100%;
+    padding: 16px 20px;
+    background: #000;
+    border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 8px;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.luxury-form-boxed input:focus,
+.luxury-form-boxed textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(212,175,55,0.1);
+}
+
+.luxury-form-boxed textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit-gold {
+    width: 100%;
+    padding: 18px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 25px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212,175,55,0.4);
+    background: #e6c54c;
+}
+
+@media (max-width: 900px) {
+    .contact-premium-grid {
+        grid-template-columns: 1fr;
+    }
+    .luxury-form-boxed-container {
+        padding: 25px;
+    }
+}
+
+/* ============================
    HORAIRES D'OUVERTURE
    ============================ */
 .horaire-box {
