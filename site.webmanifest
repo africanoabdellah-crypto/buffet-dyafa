@@ -1,0 +1,21 @@
+{
+    "name": "Buffet Diyafa",
+    "short_name": "Diyafa",
+    "description": "Organisation et décoration de tous vos événements à Tanger. L'élégance à la Marocaine.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#050505",
+    "icons": [
+        {
+            "src": "logo_blanco.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "logo_blanco.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
