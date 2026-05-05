@@ -318,8 +318,16 @@ h4,
 .hero-text {
     font-size: 1.3rem;
     color: #e0e0e0;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem;
+    max-width: 800px;
     font-weight: 300;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* SECTIONS */
@@ -1481,6 +1489,10 @@ h4,
         padding: 0 20px;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-links {
         position: absolute;
         left: 0;
@@ -1513,7 +1525,17 @@ h4,
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-dark,
+    .section-light {
+        padding: 60px 0;
     }
 
     .grid-2,
